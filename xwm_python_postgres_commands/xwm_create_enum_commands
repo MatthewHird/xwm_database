@@ -1,0 +1,46 @@
+CREATE TYPE public.attack_or_energy_options AS ENUM (
+    'A',
+    'E'
+);
+
+CREATE TYPE public.attack_requirements AS ENUM (
+    'NA',
+    'TL',
+    'F',
+    'E'
+);
+
+CREATE TYPE public.maneuver_difficulty AS ENUM (
+    'G',
+    'W',
+    'R'
+);
+
+CREATE TYPE public.ship_supertype_options AS ENUM (
+    'X-wing',
+    'TIE'
+);
+
+CREATE TYPE public.spend_requirement_choices AS ENUM (
+    'F',
+    'T',
+    '1',
+    '2'
+);
+
+CREATE TYPE public.upgrade_restriction_types AS ENUM (
+    'L',
+    'F',
+    'SS',
+    'ST',
+    'SST',
+    'C',
+    'U',
+    'PS',
+    'AB',
+    'AV',
+    'UB',
+    'E',
+    'HV',
+    'SV'
+);

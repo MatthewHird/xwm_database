@@ -1,0 +1,82 @@
+COPY faction (faction_id, faction_name)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/faction.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY ship_size (size_id, size_name)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/ship_size.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY firing_arc_type (arc_id, arc_name, used_for_primary_attack, description)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/firing_arc_type.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY action_type (action_id, action_name, description)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/action_type.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY maneuver_type (maneuver_id, maneuver_name, description)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/maneuver_type.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY upgrade_type (upgrade_id, upgrade_name, description)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/upgrade_type.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY unique_name (u_name_id, u_name)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/unique_name.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY condition (condition_id, condition_name, u_name_id, text_box, activation_keyword, keywords)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/condition.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY upgrade_card (upgrade_card_id, card_name, variant, u_name_id, upgrade_type_id, 
+    point_cost, text_box, activation_keyword, keywords)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/upgrade_card.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY upgrade_card_restrictions (upgrade_card_id, restriction_type, restriction)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/upgrade_card_restrictions.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY secondary_attack (upgrade_card_id, attack_value, min_range, max_range, requirement, 
+    spend_requirement, fire_outside_firing_arc)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/secondary_attack.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY ship (ship_id, ship_name, variant, faction_id, size_id, attack_or_energy, attack_energy_value,
+    agility_value, hull_value, shield_value, keywords)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/ship.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY huge_primary_attack_range (ship_id, min_range, max_range)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/huge_primary_attack_range.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY ship_supertype (ship_id, supertype)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/ship_supertype.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY pilot (pilot_id, pilot_name, variant, u_name_id, ship_id, pilot_skill, elite_upgrade, point_cost, keywords)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/pilot.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY maneuver_dial (ship_id, speed, maneuver_id, difficulty)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/maneuver_dial.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY huge_maneuver_dial (ship_id, speed, maneuver_id, energy_gain)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/huge_maneuver_dial.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY upgrade_bar (ship_id, upgrade_type_id)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/upgrade_bar.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY action_bar (ship_id, action_id)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/action_bar.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';
+
+COPY ship_firing_arcs (ship_id, firing_arc_id)
+FROM 'RELATIVE_PATH/xwm_database_csv_files/ship_firing_arcs.csv'
+WITH DELIMITER ',' CSV HEADER NULL 'NULL';

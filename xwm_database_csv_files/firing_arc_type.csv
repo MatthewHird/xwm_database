@@ -1,0 +1,11 @@
+firing_arc_type_id,firing_arc_type_name,used_for_primary_attack,description
+1,Primary Firing Arc Only,TRUE,
+2,Turret Primary Weapon,TRUE,
+3,Rear-facing Auxiliary Firing Arc,TRUE,
+4,Rear-facing Special Firing Arc,FALSE,
+5,180 Degree Auxiliary Firing Arc,TRUE,
+6,Mobile Firing Arc,TRUE,
+7,Bullseye Firing Arc,TRUE,
+8,Forward Firing Arc,TRUE,
+9,90 Degree Side Firing Arcs,FALSE,
+10,Extended Side Firing Arcs,FALSE,

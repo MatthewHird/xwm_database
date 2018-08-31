@@ -1,0 +1,288 @@
+unique_name_id,unique_name_name
+0,FALSE
+1,"""Backdraft"""
+2,"""Backstabber"""
+3,"""Blue Ace"""
+4,"""Chaser"""
+5,"""Chopper"""
+6,"""Cobalt Leader"""
+7,"""Countdown"""
+8,"""Crimson Leader"""
+9,"""Crimson Specialist"""
+10,"""Dark Curse"""
+11,"""Deathfire"""
+12,"""Deathrain"""
+13,"""Double Edge"""
+14,"""Duchess"""
+15,"""Dutch"" Vander"
+16,"""Echo"""
+17,"""Epsilon Ace"""
+18,"""Epsilon Leader"""
+19,"""Fel's Wrath"""
+20,"""Genius"""
+21,"""Gonk"""
+22,"""Hobbie"" Klivian"
+23,"""Howlrunner"""
+24,"""Leebo"""
+25,"""Mauler Mithel"""
+26,"""Night Beast"""
+27,"""Omega Ace"""
+28,"""Omega Leader"""
+29,"""Pure Sabacc"""
+30,"""Quickdraw"""
+31,"""Red Ace"""
+32,"""Redline"""
+33,"""Scourge"""
+34,"""Snap"" Wexley"
+35,"""Vizier"""
+36,"""Wampa"""
+37,"""Whisper"""
+38,"""Winged Gundark"""
+39,"""Youngster"""
+40,"""Zeb"" Orrelios"
+41,"""Zeta Ace"""
+42,"""Zeta Leader"""
+43,4-LOM
+44,A Debt to Pay
+45,A Score to Settle
+46,Admiral Ozzel
+47,Agent Kallus
+48,Ahsoka Tano
+49,Airen Cracken
+50,Andrasta
+51,AP-5
+52,Arvel Crynyd
+53,Asajj Ventress
+54,Assailer
+55,Azmorigan
+56,Baze Malbus
+57,BB-8
+58,Benthic Two Tubes
+59,Biggs Darklighter
+60,Bistan
+61,Black One
+62,Boba Fett
+63,Bodhi Rook
+64,Bodyguard
+65,Bomblet Generator
+66,BoShek
+67,Bossk
+68,Braylen Stramm
+69,Bright Hope
+70,Broken Horn
+71,C-3PO
+72,Cad Bane
+73,Captain Dicunn
+74,Captain Feroph
+75,Captain Jonus
+76,Captain Jostero
+77,Captain Kagi
+78,Captain Needa
+79,Captain Nym
+80,Captain Rex
+81,Captain Yorr
+82,Captured TIE
+83,Carlist Rieekan
+84,Carnor Jax
+85,Cassian Andor
+86,Chewbacca
+87,Cikatro Vizago
+88,Cloaking Device
+89,Colonel Jendon
+90,Colonel Vessery
+91,Commander Alozen
+92,Commander Kenkirk
+93,Constible Zuvio
+94,Corran Horn
+95,Countess Ryad
+96,Dace Bonearm
+97,Dalan Oberos
+98,Darth Vader
+99,Dash Rendar
+100,Dauntless
+101,Death Troopers
+102,Dengar
+103,Director Krennic
+104,Dodonna's Pride
+105,Drea Renthal
+106,Dutyfree
+107,Eaden Vrill
+108,Edrio Two Tubes
+109,Ello Asty
+110,Emon Azzameen
+111,EMP Device
+112,Emperor Palpatine
+113,Enforcer
+114,Esege Tuketu
+115,Etahn A'baht
+116,Experimental Interface
+117,Ezra Bridger
+118,Fanatical Devotion
+119,Fenn Rau
+120,Finn
+121,First Order Vanguard
+122,Garven Dreis
+123,Gemmer Sojan
+124,General Hux
+125,Genesis Red
+126,Ghost
+127,Grand Moff Tarkin
+128,Graz the Hunter
+129,Greedo
+130,Guri
+131,Han Solo
+132,Havoc
+133,Heff Tobber
+134,Hera Syndulla
+135,Horton Salm
+136,Hound's Tooth
+137,I'll Show You the Dark Side
+138,Ibtisam
+139,IG-88A
+140,IG-88B
+141,IG-88C
+142,IG-88D
+143,Impetuous
+144,Inaldra
+145,Insatiable Worrt
+146,Instigator
+147,Jabba the Hutt
+148,Jaina's Light
+149,Jake Farrell
+150,Jan Dodonna
+151,Jan Ors
+152,Jek Porkins
+153,Jess Pava
+154,Juno Eclipse
+155,Jyn Erso
+156,Kaa'to Leeachos
+157,Kad Solus
+158,Kanan Jarrus
+159,Kath Scarlet
+160,Kavil
+161,Ketsu Onyo
+162,Keyan Farlander
+163,Kir Kanos
+164,Kiranda Doni
+165,Krassis Trelix
+166,Kullbee Sperado
+167,Kyle Katarn
+168,Kylo Ren
+169,Kylo Ren's Shuttle
+170,Laetin A'shera
+171,Lando Calrissian
+172,Latts Razzi
+173,Leevan Tenza
+174,Leia Organa
+175,Lieutenant Blout
+176,Lieutenant Colzet
+177,Lieutenant Dormitz
+178,Lieutenant Karsabi
+179,Lieutenant Kestal
+180,Lieutenant Lorrir
+181,Lone Wolf
+182,Lowhhrick
+183,Luke Skywalker
+184,M9-G8
+185,Maarek Stele
+186,Magva Yarro
+187,Major Rhymer
+188,Major Stridan
+189,Major Vermeil
+190,Major Vynder
+191,Manaroo
+192,Mara Jade
+193,Maul
+194,Merchant One
+195,Millennium Falcon
+196,Mimicked
+197,Mist Hunter
+198,Moff Jerjerrod
+199,Moldy Crow
+200,Moralo Eval
+201,Multi-spectral Camoflage
+202,N'dru Suhlak
+203,Nashtah Pup Pilot
+204,Nera Dantels
+205,Nien Nunb
+206,Norra Wexley
+207,Old Teroch
+208,Optimized Prototype
+209,Outrider
+210,Palob Godalhi
+211,Phantom
+212,Phantom II
+213,Poe Dameron
+214,Prince Xizor
+215,Punishing One
+216,Quantum Storm
+217,Quinn Jast
+218,R2-D2
+219,R2-D6
+220,R2-F2
+221,R3-A2
+222,R4-B11
+223,R4-D6
+224,R4-E1
+225,R5-D8
+226,R5-K6
+227,R5-P8
+228,R5-P9
+229,R5-TK
+230,R5-X3
+231,R7-T1
+232,Rattled
+233,Raymus Antilles
+234,Rear Admiral Chiraneau
+235,Rebel Captive
+236,Requiem
+237,Rexler Brath
+238,Rey
+239,Roark Garnet
+240,Sabine Wren
+241,Sabine's Masterpiece
+242,Sarco Plank
+243,Saw Gerrera
+244,Scrambled
+245,Selflessness
+246,Serissu
+247,Shadow Caster
+248,Shadowed
+249,Shara Bey
+250,Slave I
+251,Sol Sixxa
+252,Soontir Fel
+253,Squad Leader
+254,ST-321
+255,Sunny Bounder
+256,Suppressive Fire
+257,Suppressor
+258,Swarm Leader
+259,Talonbane Cobra
+260,Tantive IV
+261,Targeting Scrambler
+262,Tarn Mison
+263,Tel Trevura
+264,Ten Numb
+265,"Test Pilot ""Blackout"""
+266,Tetran Cowall
+267,Thane Kyrell
+268,The Inquisitor
+269,Thweek
+270,Tomax Bren
+271,Torani Kulda
+272,Torkil Mux
+273,Toryn Farr
+274,Turr Phennir
+275,Tycho Celchu
+276,Unkar Plutt
+277,Valen Rudor
+278,Vector
+279,Viktor Hel
+280,Virago
+281,Wedge Antilles
+282,Wes Janson
+283,Wullffwarro
+284,Ysanne Isard
+285,Zertik Strom
+286,Zuckuss

@@ -1,0 +1,328 @@
+CREATE TYPE public.attack_or_energy_options AS ENUM ('A', 'E');
+
+CREATE TYPE public.attack_requirements AS ENUM ('NA', 'TL', 'F', 'E');
+
+CREATE TYPE public.maneuver_difficulty AS ENUM ('G', 'W', 'R');
+
+CREATE TYPE public.ship_supertype_options AS ENUM ('X-wing', 'TIE');
+
+CREATE TYPE public.spend_requirement_choices AS ENUM ('F', 'T', '1', '2');
+
+CREATE TYPE public.upgrade_restriction_types AS ENUM ('L', 'F', 'SS', 'ST',
+    'SST', 'C', 'U', 'PS', 'AB', 'AV', 'UB', 'E', 'HV', 'SV');
+
+CREATE TABLE public.faction
+(
+  faction_id smallserial,
+  faction_name text NOT NULL,
+  PRIMARY KEY (faction_id)
+);
+
+
+CREATE TABLE public.ship_size
+(
+  size_id smallserial,
+  size_name text NOT NULL,
+  PRIMARY KEY (size_id)
+);
+
+
+CREATE TABLE public.firing_arc_type
+(
+  arc_id smallserial,
+  arc_name text NOT NULL,
+  used_for_primary_attack boolean NOT NULL DEFAULT false,
+  description text NOT NULL DEFAULT ''::text,
+  PRIMARY KEY (arc_id)
+);
+
+
+CREATE TABLE public.action_type
+(
+  action_id smallserial,
+  action_name text NOT NULL,
+  description text NOT NULL DEFAULT ''::text,
+  PRIMARY KEY (action_id)
+);
+
+
+CREATE TABLE public.maneuver_type
+(
+  maneuver_id smallserial,
+  maneuver_name text NOT NULL,
+  description text NOT NULL DEFAULT ''::text,
+  PRIMARY KEY (maneuver_id)
+);
+
+
+CREATE TABLE public.upgrade_type
+(
+  upgrade_id smallserial,
+  upgrade_name text NOT NULL,
+  description text NOT NULL DEFAULT ''::text,
+  PRIMARY KEY (upgrade_id)
+);
+
+
+CREATE TABLE public.unique_name
+(
+  u_name_id smallserial,
+  u_name text NOT NULL,
+  PRIMARY KEY (u_name_id)
+);
+
+
+CREATE TABLE public.condition
+(
+  condition_id smallserial,
+  condition_name text NOT NULL,
+  u_name_id smallint REFERENCES public.unique_name (u_name_id),
+  text_box text NOT NULL DEFAULT ''::text,
+  activation_keyword text NOT NULL DEFAULT ''::text,
+  keywords text NOT NULL DEFAULT ''::text,
+  PRIMARY KEY (condition_id)
+);
+
+
+CREATE TABLE public.upgrade_card
+(
+  upgrade_card_id smallserial,
+  card_name text NOT NULL,
+  variant text DEFAULT '',
+  u_name_id smallint REFERENCES public.unique_name (u_name_id),
+  upgrade_type_id smallint REFERENCES public.upgrade_type (upgrade_id),
+  point_cost smallint,
+  text_box text NOT NULL DEFAULT ''::text,
+  activation_keyword text NOT NULL DEFAULT ''::text,
+  keywords text NOT NULL DEFAULT ''::text,
+  PRIMARY KEY (upgrade_card_id)
+);
+
+CREATE TABLE public.upgrade_card_restrictions
+(
+  upgrade_card_id smallint REFERENCES public.upgrade_card (upgrade_card_id),
+  restriction_type upgrade_restriction_types NOT NULL,
+  restriction text NOT NULL
+);
+
+
+CREATE TABLE public.secondary_attack
+(
+  upgrade_card_id smallint REFERENCES public.upgrade_card (upgrade_card_id),
+  attack_value smallint CHECK (attack_value > 0) NOT NULL ,
+  min_range smallint CHECK (max_range >= min_range) NOT NULL,
+  max_range smallint CHECK (min_range > 0) NOT NULL,
+  requirement attack_requirements NOT NULL DEFAULT 'NA'::attack_requirements,
+  spend_requirement spend_requirement_choices NOT NULL DEFAULT 'F'::spend_requirement_choices,
+  fire_outside_firing_arc boolean NOT NULL DEFAULT false
+);
+
+
+CREATE TABLE public.ship
+(
+  ship_id smallserial,
+  ship_name text NOT NULL,
+  variant text DEFAULT '',
+  faction_id smallint REFERENCES public.faction (faction_id),
+  size_id smallint REFERENCES public.ship_size (size_id),
+  attack_or_energy attack_or_energy_options NOT NULL DEFAULT 'A'::attack_or_energy_options,
+  attack_energy_value smallint CHECK (attack_energy_value > 0) NOT NULL,
+  agility_value smallint CHECK (agility_value >= 0),
+  hull_value smallint CHECK (hull_value > 0),
+  shield_value smallint CHECK (shield_value >= 0),
+  keywords text NOT NULL DEFAULT ''::text,
+  PRIMARY KEY (ship_id)
+);
+
+
+CREATE TABLE public.huge_primary_attack_range
+(
+  ship_id smallint REFERENCES public.ship (ship_id),
+  min_range smallint CHECK (max_range >= min_range) NOT NULL,
+  max_range smallint CHECK (min_range > 0) NOT NULL
+);
+
+
+CREATE TABLE public.ship_supertype
+(
+  ship_id smallint REFERENCES public.ship (ship_id),
+  supertype ship_supertype_options NOT NULL
+);
+
+
+CREATE TABLE public.pilot
+(
+  pilot_id smallserial,
+  pilot_name text NOT NULL,
+  variant text DEFAULT '',
+  u_name_id smallint REFERENCES public.unique_name (u_name_id),
+  ship_id smallint REFERENCES public.ship (ship_id),
+  pilot_skill smallint CHECK (pilot_skill >= 0 AND pilot_skill <= 9),
+  elite_upgrade boolean NOT NULL DEFAULT false,
+  point_cost smallint,
+  keywords text NOT NULL DEFAULT ''::text,
+  PRIMARY KEY (pilot_id)
+);
+
+
+CREATE TABLE public.maneuver_dial
+(
+  ship_id smallint REFERENCES public.ship (ship_id),
+  speed smallint CHECK (speed >= 0 AND speed <= 5),
+  maneuver_id smallint REFERENCES public.maneuver_type (maneuver_id),
+  difficulty maneuver_difficulty NOT NULL DEFAULT 'W'::maneuver_difficulty
+);
+
+
+CREATE TABLE public.huge_maneuver_dial
+(
+  ship_id smallint REFERENCES public.ship (ship_id),
+  speed smallint CHECK (speed >= 0 AND speed <= 5),
+  maneuver_id smallint REFERENCES public.maneuver_type (maneuver_id),
+  energy_gain smallint CHECK (energy_gain >= 0 AND energy_gain <= 3)
+);
+
+
+CREATE TABLE public.upgrade_bar
+(
+  ship_id smallint REFERENCES public.ship (ship_id),
+  upgrade_type_id smallint REFERENCES public.upgrade_type (upgrade_id)
+);
+
+
+CREATE TABLE public.action_bar
+(
+  ship_id smallint REFERENCES public.ship (ship_id),
+  action_id smallint REFERENCES public.action_type (action_id)
+);
+
+
+CREATE TABLE public.ship_firing_arcs
+(
+  ship_id smallint REFERENCES public.ship (ship_id),
+  firing_arc_id smallint REFERENCES public.firing_arc_type (arc_id)
+);
+
+CREATE VIEW public.maneuver_dial_view AS 
+ SELECT ship.ship_name,
+    maneuver_dial.speed,
+    maneuver_type.maneuver_name,
+    maneuver_dial.difficulty
+   FROM maneuver_dial
+     JOIN ship ON maneuver_dial.ship_id = ship.ship_id
+     JOIN maneuver_type ON maneuver_dial.maneuver_id = maneuver_type.maneuver_id;
+
+CREATE VIEW public.huge_maneuver_dial_view AS
+ SELECT ship.ship_name,
+    huge_maneuver_dial.speed,
+    maneuver_type.maneuver_name,
+    huge_maneuver_dial.energy_gain
+   FROM huge_maneuver_dial
+     JOIN ship ON huge_maneuver_dial.ship_id = ship.ship_id
+     JOIN maneuver_type ON huge_maneuver_dial.maneuver_id = maneuver_type.maneuver_id;
+
+CREATE VIEW public.upgrade_bar_view AS 
+ SELECT ship.ship_name,
+    upgrade_type.upgrade_name
+   FROM upgrade_bar
+     JOIN ship ON upgrade_bar.ship_id = ship.ship_id
+     JOIN upgrade_type ON upgrade_bar.upgrade_type_id = upgrade_type.upgrade_id;
+
+CREATE VIEW public.action_bar_view AS 
+ SELECT ship.ship_name,
+    action_type.action_name
+   FROM action_bar
+     JOIN ship ON action_bar.ship_id = ship.ship_id
+     JOIN action_type ON action_bar.action_id = action_type.action_id;
+
+CREATE VIEW public.ship_firing_arcs_view AS 
+ SELECT ship.ship_name,
+    firing_arc_type.arc_name
+   FROM ship_firing_arcs
+     JOIN ship ON ship_firing_arcs.ship_id = ship.ship_id
+     JOIN firing_arc_type ON ship_firing_arcs.firing_arc_id = firing_arc_type.arc_id;
+
+CREATE VIEW public.pilot_view AS 
+ SELECT pilot.pilot_id,
+    pilot.pilot_name,
+    pilot.variant,
+    unique_name.u_name,
+    ship.ship_name,
+    pilot.pilot_skill,
+    pilot.elite_upgrade,
+    pilot.point_cost,
+    pilot.keywords
+   FROM pilot
+     JOIN unique_name ON pilot.u_name_id = unique_name.u_name_id
+     JOIN ship ON pilot.ship_id = ship.ship_id;
+
+CREATE VIEW public.ship_supertype_view AS 
+ SELECT ship.ship_name,
+    ship_supertype.supertype
+   FROM ship_supertype
+     JOIN ship ON ship_supertype.ship_id = ship.ship_id;
+
+CREATE VIEW public.huge_primary_attack_range_view AS 
+ SELECT ship.ship_name,
+    huge_primary_attack_range.min_range,
+    huge_primary_attack_range.max_range
+   FROM huge_primary_attack_range
+     JOIN ship ON huge_primary_attack_range.ship_id = ship.ship_id;
+
+CREATE VIEW public.ship_view AS 
+ SELECT ship.ship_id,
+    ship.ship_name,
+    ship.variant,
+    faction.faction_name,
+    ship_size.size_name,
+    ship.attack_or_energy,
+    ship.attack_energy_value,
+    ship.agility_value,
+    ship.hull_value,
+    ship.shield_value,
+    ship.keywords
+   FROM ship
+     JOIN faction ON ship.faction_id = faction.faction_id
+     JOIN ship_size ON ship.size_id = ship_size.size_id;
+
+CREATE VIEW public.secondary_attack_view AS 
+ SELECT upgrade_card.card_name,
+    secondary_attack.attack_value,
+    secondary_attack.min_range,
+    secondary_attack.max_range,
+    secondary_attack.requirement,
+    secondary_attack.spend_requirement,
+    secondary_attack.fire_outside_firing_arc
+   FROM secondary_attack
+     JOIN upgrade_card ON secondary_attack.upgrade_card_id = upgrade_card.upgrade_card_id;
+
+CREATE VIEW public.upgrade_card_restrictions_view AS 
+ SELECT upgrade_card.card_name,
+    upgrade_card_restrictions.restriction_type,
+    upgrade_card_restrictions.restriction
+   FROM upgrade_card_restrictions
+     JOIN upgrade_card ON upgrade_card_restrictions.upgrade_card_id = upgrade_card.upgrade_card_id;
+
+CREATE VIEW public.upgrade_card_view AS 
+ SELECT upgrade_card.upgrade_card_id,
+    upgrade_card.card_name,
+    upgrade_card.variant,
+    unique_name.u_name,
+    upgrade_type.upgrade_name,
+    upgrade_card.point_cost,
+    upgrade_card.text_box,
+    upgrade_card.activation_keyword,
+    upgrade_card.keywords
+   FROM upgrade_card
+     JOIN unique_name ON upgrade_card.u_name_id = unique_name.u_name_id
+     JOIN upgrade_type ON upgrade_card.upgrade_type_id = upgrade_type.upgrade_id;
+
+CREATE VIEW public.condition_view AS 
+ SELECT condition.condition_id,
+    condition.condition_name,
+    unique_name.u_name,
+    condition.text_box,
+    condition.activation_keyword,
+    condition.keywords
+   FROM condition
+     JOIN unique_name ON condition.u_name_id = unique_name.u_name_id;

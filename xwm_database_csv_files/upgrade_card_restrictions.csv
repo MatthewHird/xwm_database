@@ -1,0 +1,239 @@
+upgrade_card_id,restriction_type,restriction
+1,ST,Alpha-class Star Wing
+2,ST,Alpha-class Star Wing
+3,ST,Gozanti-class Cruiser
+4,ST,Gozanti-class Cruiser
+5,ST,Gozanti-class Cruiser
+6,ST,Lambda-class Shuttle
+7,ST,Raider-class Corv. (aft)
+8,ST,Raider-class Corv. (aft)
+9,ST,Raider-class Corv. (aft)
+10,ST,TIE Advanced
+11,ST,TIE Adv. Prototype
+12,ST,TIE Bomber
+13,ST,TIE Defender
+14,ST,TIE Defender
+15,ST,TIE Interceptor
+16,ST,TIE Reaper
+17,ST,TIE/sf
+18,ST,TIE Silencer
+19,ST,TIE Striker
+20,ST,Upsilon-class Shuttle
+21,ST,VT-49 Decimator
+22,ST,ARC-170
+23,ST,A-wing
+23,PS,2+
+24,ST,B/SF-17 Bomber
+25,ST,CR90 Corvette (fore)
+26,ST,CR90 Corvette (fore)
+27,ST,CR90 Corvette (fore)
+28,ST,GR-75 Medium Transport
+29,ST,GR-75 Medium Transport
+30,ST,GR-75 Medium Transport
+31,ST,HWK-290
+32,ST,T-70 X-wing
+32,PS,7+
+33,ST,TIE Fighter
+33,F,Rebel
+34,ST,U-wing
+35,ST,U-wing
+36,ST,VCX-100
+38,ST,VCX-100
+40,ST,YT-1300
+41,ST,YT-1300
+42,ST,YT-2400
+43,ST,Y-wing
+44,ST,Aggressor
+45,ST,C-ROC Cruiser
+46,ST,C-ROC Cruiser
+47,ST,C-ROC Cruiser
+48,ST,Firespray-31
+49,ST,Firespray-31
+50,ST,G-1A Starfighter
+51,ST,JumpMaster 5000
+52,ST,Kihraxz Fighter
+53,ST,Lancer-class Pursuit Craft
+54,ST,M3-A Interceptor
+55,ST,M3-A Interceptor
+56,ST,M12-L Kimogila
+57,ST,Protectorate Starfighter
+58,ST,Scurrg H-6 Bomber
+59,ST,StarViper
+60,ST,StarViper
+60,PS,4+
+61,ST,YV-666
+63,SST,X-wing
+64,UB,Torpedoes
+64,UB,Missiles
+65,ST,T-65 X-wing
+66,ST,T-65 X-wing
+67,ST,YT-1300
+67,ST,YT-2400
+68,ST,B-wing
+69,ST,TIE Fighter
+69,F,Rebel
+70,ST,B/SF-17 Bomber
+71,ST,YV-666
+72,SS,Small
+74,SS,Large
+75,SST,TIE
+77,SS,Large
+78,AB,Boost
+79,ST,Lancer Pursuit Carft
+80,SS,Large
+81,SST,TIE
+81,AV,2-
+82,F,Rebel
+82,F,Scum
+82,SV,1
+83,ST,Quadjumper
+86,SS,Small
+87,SS,Large
+91,ST,TIE Phantom
+94,SS,Huge
+95,SS,Huge
+96,SS,Huge
+97,ST,GR-75
+103,F,Scum
+103,C,2
+107,SS,Small
+110,F,Scum
+111,SS,Small
+114,SS,Small
+114,F,Rebel
+117,F,Scum
+118,SS,Small
+122,SS,Small
+123,SS,Small
+125,SS,Small
+137,F,Imperial
+147,HV,4-
+152,SS,Large
+154,ST,TIE Advanced
+156,SS,Small
+163,SS,Small
+164,F,Rebel
+165,F,Scum
+166,L,Limited
+167,F,Scum
+168,F,Scum
+169,F,Rebel
+172,F,Scum
+173,F,Rebel
+174,F,Scum
+177,F,Scum
+178,F,Rebel
+179,F,Rebel
+180,SS,Huge
+181,F,Scum
+182,F,Rebel
+183,F,Rebel
+184,F,Scum
+185,SS,Huge
+185,F,Imperial
+186,F,Imperial
+187,SS,Huge
+187,F,Scum
+188,F,Rebel
+190,F,Scum
+191,F,Scum
+192,SS,Huge
+192,F,Imperial
+193,F,Rebel
+194,F,Rebel
+195,F,Rebel
+196,F,Imperial
+197,F,Scum
+198,F,Rebel
+199,F,Imperial
+200,F,Rebel
+201,F,Rebel
+202,F,Scum
+203,F,Rebel
+204,F,Rebel
+206,F,Imperial
+207,F,Scum
+207,L,Limited
+208,F,Rebel
+209,F,Rebel
+211,F,Imperial
+211,L,Limited
+212,F,Imperial
+213,L,Limited
+214,L,Limited
+215,F,Huge
+216,F,Rebel
+217,F,Rebel
+218,SS,Huge
+218,F,Rebel
+219,SS,Huge
+219,F,Limited
+220,F,Imperial
+221,F,Scum
+222,F,Rebel
+223,F,Imperial
+224,F,Scum
+225,F,Rebel
+226,F,Rebel
+227,F,Imperial
+228,F,Rebel
+229,F,Imperial
+230,F,Scum
+230,U,Squad contains Ezra Bridger
+232,SS,Huge
+232,F,Imperial
+233,L,Limited
+234,F,Imperial
+237,F,Rebel
+240,F,Rebel
+241,F,Rebel
+242,L,Limited
+243,F,Imperial
+244,F,Imperial
+245,F,Rebel
+246,F,Imperial
+248,F,Scum
+249,SS,Huge
+249,F,Imperial
+250,SS,Huge
+250,F,Rebel
+251,SS,Huge
+251,F,Rebel
+252,SS,Huge
+252,F,Rebel
+253,F,Rebel
+254,F,Imperial
+258,E,FALSE
+258,PS,2+
+291,F,Rebel
+291,F,Scum
+292,F,Rebel
+292,F,Scum
+294,SS,Small
+294,L,Limited
+299,ST,T-65
+299,ST,U-wing
+300,ST,Y-wing
+301,L,Limited
+308,ST,A-wing
+322,ST,B/SF-17 Bomber
+331,SS,Large
+343,ST,Gozanti-class Cruiser
+344,ST,C-ROC
+349,L,Limited
+350,L,Limited
+352,L,Limited
+353,ST,Gozanti-class Cruiser
+353,L,Limited
+354,ST,GR-75
+355,ST,Gozanti-class Cruiser
+356,ST,C-ROC
+356,ST,GR-75
+356,L,Limited
+357,L,Limited
+358,L,Limited
+359,L,Limited
+360,L,Limited
+363,L,Limited
+364,L,Limited
+366,L,Limited

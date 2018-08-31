@@ -1,0 +1,41 @@
+DROP VIEW public.maneuver_dial_view;
+DROP VIEW public.huge_maneuver_dial_view;
+DROP VIEW public.upgrade_bar_view;
+DROP VIEW public.action_bar_view;
+DROP VIEW public.ship_firing_arcs_view;
+DROP VIEW public.pilot_view;
+DROP VIEW public.ship_supertype_view;
+DROP VIEW public.huge_primary_attack_range_view;
+DROP VIEW public.ship_view;
+DROP VIEW public.secondary_attack_view;
+DROP VIEW public.upgrade_card_restrictions_view;
+DROP VIEW public.upgrade_card_view;
+DROP VIEW public.condition_view;
+
+DROP TABLE public.ship_firing_arcs,
+ public.action_bar,
+ public.upgrade_bar,
+ public.huge_maneuver_dial,
+ public.maneuver_dial,
+ public.pilot,
+ public.ship_supertype,
+ public.huge_primary_attack_range,
+ public.ship,
+ public.secondary_attack,
+ public.upgrade_card_restrictions,
+ public.upgrade_card,
+ public.condition,
+ public.unique_name,
+ public.upgrade_type,
+ public.maneuver_type,
+ public.action_type,
+ public.firing_arc_type,
+ public.ship_size,
+ public.faction;
+
+DROP TYPE public.attack_or_energy_options,
+ public.attack_requirements,
+ public.maneuver_difficulty,
+ public.ship_supertype_options,
+ public.spend_requirement_choices,
+ public.upgrade_restriction_types;

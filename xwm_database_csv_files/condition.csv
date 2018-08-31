@@ -1,0 +1,11 @@
+condition_id,condition_name,unique_name_id,text_box,activation_keyword,keywords
+1,A Debt to Pay,44,,,
+2,Fanatical Devotion,118,,,
+3,Harpooned!,0,,Action,
+4,I'll Show You the Dark Side,137,,,
+5,Mimicked,196,,,
+6,Optimized Prototype,208,,,
+7,Rattled,232,,Action,
+8,Scrambled,244,,,
+9,Shadowed,248,,,
+10,Suppressive Fire,256,,,
