@@ -8,8 +8,8 @@ The app also requires the psycopg2 library. This can be installed on linux using
 
 for python2:
     
-    sudo pip install psycopg2
+    sudo pip install psycopg2-binary
 
 for python3:
 
-    sudo pip3 install psycopg2
+    sudo pip3 install psycopg2-binary
