@@ -160,6 +160,7 @@ CREATE TABLE public.pilot
   pilot_skill smallint CHECK (pilot_skill >= 0 AND pilot_skill <= 9),
   elite_upgrade boolean NOT NULL DEFAULT false,
   point_cost smallint,
+  text_box text NOT NULL DEFAULT ''::text,
   keywords text NOT NULL DEFAULT ''::text,
   PRIMARY KEY (pilot_id)
 );

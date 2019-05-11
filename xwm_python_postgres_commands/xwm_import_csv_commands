@@ -57,7 +57,7 @@ COPY ship_supertype (ship_id, supertype)
 FROM 'RELATIVE_PATH/xwm_database_csv_files/ship_supertype.csv'
 WITH DELIMITER ',' CSV HEADER NULL 'NULL';
 
-COPY pilot (pilot_id, pilot_name, variant, u_name_id, ship_id, pilot_skill, elite_upgrade, point_cost, keywords)
+COPY pilot (pilot_id, pilot_name, variant, u_name_id, ship_id, pilot_skill, elite_upgrade, point_cost, text_box, keywords)
 FROM 'RELATIVE_PATH/xwm_database_csv_files/pilot.csv'
 WITH DELIMITER ',' CSV HEADER NULL 'NULL';
 

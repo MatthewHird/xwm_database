@@ -8,8 +8,8 @@ class DBUpdate:
         self.abs_path = os.path.dirname(os.path.abspath(__file__))
 
     def run(self):
-        # self.replace_all()
-        self.replace_data()
+        self.replace_all()
+        # self.replace_data()
         pass
 
     def replace_all(self):
